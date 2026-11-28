@@ -1,0 +1,16 @@
+Final430.bcmp_conjecture_4_30 : ∀ (s : ℤ), 2 ≤ s → FullTarget s
+def BCMP430.UntunedTarget.FullTarget : ℤ → Prop :=
+fun s => ∀ x ∈ UT s, x ≠ ↑s / (↑s + 1) → Accum s x
+def BCMP430.UntunedTarget.UT : ℤ → Set ℝ :=
+fun s => {x | x ∈ Icc 0 (↑s / (↑s + 1)) ∧ ∀ (c : Center s), x ∉ Ioo c.T c.R}
+def BCMP430.UntunedTarget.Accum : ℤ → ℝ → Prop :=
+fun s x =>
+  ∀ ε > 0,
+    ∀ (old : Finset (Set ℝ)),
+      ∃ y d,
+        dist y x < ε ∧
+          d ≠ 0 ∧
+            y ∈ fiber s d ∧
+              IsOpen (connectedComponentIn (matching s) y) ∧
+                connectedComponentIn (matching s) y ⊆ fiber s d ∧ connectedComponentIn (matching s) y ∉ old
+'BCMP430.Final430.bcmp_conjecture_4_30' depends on axioms: [propext, Classical.choice, Quot.sound]
