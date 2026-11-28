@@ -1,0 +1,4 @@
+* text=auto eol=lf
+formal/*.lean -text
+checks/*.lean -text
+formal/sources.sha256 -text

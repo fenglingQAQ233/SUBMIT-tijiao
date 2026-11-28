@@ -1,0 +1,64 @@
+name = "bcmp430"
+version = "0.2.0"
+defaultTargets = ["BCMP430"]
+
+[[lean_exe]]
+name = "checkLakePins"
+root = "checks.CheckLakePins"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.36.0"
+
+[[lean_lib]]
+name = "BCMP430"
+srcDir = "formal"
+roots = [
+  "AdicAvoid",
+  "BranchClock",
+  "CenterTape",
+  "ClockTotal",
+  "ComponentClock",
+  "ConstantTailCoverage",
+  "DeepCoverage",
+  "DepthClock",
+  "DigitBalance",
+  "DigitGuard",
+  "DigitPairs",
+  "DigitTape",
+  "DominantOrbit",
+  "DominantSuffix",
+  "DominantWindow",
+  "DropWindow",
+  "Final430",
+  "FirstDrop",
+  "FixedTail",
+  "GapFence",
+  "GapGrid",
+  "GapPullback",
+  "GapTopology",
+  "GridDensity",
+  "GridProbes",
+  "MatchLag",
+  "MatchWitness",
+  "MatchingComponents",
+  "MetricLocus",
+  "NeutralAmplify",
+  "OrbitSplice",
+  "OriginAccum",
+  "OriginalReturn",
+  "ParameterStability",
+  "PrefixCoverage",
+  "RealClock",
+  "RealPrefix",
+  "SideGerm",
+  "StreamDictionary",
+  "SurvivorCode",
+  "SurvivorWindow",
+  "TrappedReturn",
+  "UnboundedLags",
+  "UntunedTarget",
+  "WordNeighborhood",
+]
